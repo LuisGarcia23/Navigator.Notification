@@ -23,7 +23,7 @@
 
     // navigator.notification.confirm
     function onConfirm(buttonIndex) {
-        alert('You selected button ' + buttonIndex);
+        navigator.notification.alert('You selected button ' + buttonIndex);
     }
     function showConfirm() {
     navigator.notification.confirm(
@@ -38,19 +38,18 @@
    var message = "Am I Prompt Dialog?";
    var title = "PROMPT";
    var buttonLabels = ["YES","NO"];
-   var defaultText = "Default"
-   navigator.notification.prompt(message, promptCallback, 
-      title, buttonLabels, defaultText);
+     navigator.notification.prompt(message, promptCallback, 
+      title, buttonLabels);}
 
    function promptCallback(result) {
-      console.log("You clicked " + result.buttonIndex + " button! \n" + 
+    navigator.notification.alert("You clicked " + result.buttonIndex + " button! \n" + 
          "You entered " +  result.input1);
    }
 	// Navigator.notification.beep
     function playBeep() {
         navigator.notification.beep(3);
     }
-}
+
 </script>
 </head>
 <body onload="onBodyLoad()">
